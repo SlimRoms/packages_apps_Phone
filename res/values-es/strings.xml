@@ -581,6 +581,31 @@
     <string name="flip_action_summary">Al voltear el terminal, <xliff:g id="action">%s</xliff:g></string>
     <string name="phone_number_label">Mi número de teléfono</string>
     <string name="phone_number_summary">Programe el número de teléfono para este dispositivo</string>
+    <string name="blacklist_title">Lista negra</string>
+    <string name="enable_blacklist_title">Habilitar lista negra</string>
+    <string name="blacklist_summary_disabled">Deshabilitada</string>
+    <string name="blacklist_summary">Las llamadas entrantes de números de teléfono en la lista negra serán bloqueadas</string>
+    <string name="blacklist_notify">Mostrar notificación</string>
+    <string name="blacklist_private_numbers_title">Números privados</string>
+    <string name="blacklist_private_numbers_summary">Bloquear llamadas entrantes de números privados</string>
+    <string name="blacklist_unknown_numbers_title">Números desconocidos</string>
+    <string name="blacklist_unknown_numbers_summary">Bloquea llamadas entrantes de números que no estén en la lista de contactos</string>
+    <string name="blacklist_regex_title">Utilice comodines</string>
+    <string name="blacklist_regex_summary">Use (.) como un comodín y (*) para la repetición. Ej. 123.* bloquear numero que empiezan con 123 y .*123.* bloquea numero que contengan 123</string>
+    <string name="add_blacklist_number">Agregar número de teléfono</string>
+    <string name="add_to_blacklist">>Agregar a lista negra</string>
+    <string name="add_to_blacklist_message">Las llamadas futuras de %s se bloquearán</string>
+    <string name="remove_blacklist_number_title">Remover número</string>
+    <string name="remove_blacklist_number">¿Desea eliminar %s de la lista negra?</string>
+    <string name="blacklist_notification">Bloqueada una llamada de %s</string>
+    <string name="blacklist_notification_multiple"><xliff:g id="count">%d</xliff:g> llamadas fueron bloqueadas</string>
+    <string name="blacklist_notification_private_number">Bloqueada una llamada de un número privado</string>
+    <string name="blacklist_notification_list_private">Privado</string>
+    <string name="blacklist_notification_unknown_number">Número desconocido bloqueado %s</string>
+    <string name="unblock_number">Desbloquear</string>
+    <string name="onscreenBlacklistText">Lista negra</string>
+    <string name="transparent_in_call_widget">Transparencia en la pantalla de llamada</string>
+    <string name="transparent_in_call_widget_summary">Muestra la imagen de contacto completa en las llamadas entrantes</string>
     <string-array name="clir_display_values">
         <item>Valor predeterminado de red</item>
         <item>Ocultar número</item>
