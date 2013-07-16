@@ -49,6 +49,7 @@ import android.net.Uri;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.SystemVibrator;
@@ -199,6 +200,7 @@ public class CallNotifier extends Handler
 
     // Cached system services
     private AudioManager mAudioManager;
+    private PowerManager mPowerManager;
     private Vibrator mVibrator;
 
     // Blacklist handling
@@ -230,6 +232,7 @@ public class CallNotifier extends Handler
         mWaitingCalls = new HashSet<Connection>();
 
         mAudioManager = (AudioManager) mApplication.getSystemService(Context.AUDIO_SERVICE);
+        mPowerManager = (PowerManager) mApplication.getSystemService(Context.POWER_SERVICE);
         mVibrator = (Vibrator) mApplication.getSystemService(Context.VIBRATOR_SERVICE);
 
         registerForNotifications();
@@ -800,6 +803,9 @@ public class CallNotifier extends Handler
             ActivityManagerNative.getDefault().closeSystemDialogs("call");
         } catch (RemoteException e) {
         }
+
+        // Let notificationMgr know the original state of the screen
+        mApplication.notificationMgr.setScreenStateAtIncomingCall(mPowerManager.isScreenOn());
 
         // Go directly to the in-call screen.
         // (No need to do anything special if we're already on the in-call

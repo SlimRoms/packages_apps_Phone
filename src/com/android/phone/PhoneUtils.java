@@ -418,6 +418,9 @@ public class PhoneUtils {
         static boolean showCallLogAfterCall(Context context) {
             return getPrefs(context).getBoolean("button_calllog_after_call", true);
         }
+        static boolean backgroundInCallScreen(Context context) {
+            return getPrefs(context).getBoolean("bg_incall_screen", false);
+        }
         static int flipAction(Context context) {
             String s = getPrefs(context).getString("flip_action", "0");
             return Integer.parseInt(s);
