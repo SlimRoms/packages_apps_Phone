@@ -66,6 +66,16 @@ class CallLogger {
                 ", number set to: " + PhoneUtils.toLogSafePhoneNumber(number));
         }
 
+        // Check if the incoming call was rejected. If it was and
+        // rejected_as_missed is set, we reset the call type to missed.
+        if (callLogType == Calls.INCOMING_TYPE) {
+            if (c.getDisconnectCause() ==
+                    Connection.DisconnectCause.INCOMING_REJECTED &&
+                PhoneUtils.PhoneSettings.rejectedAsMissed()) {
+                callLogType = Calls.MISSED_TYPE;
+            }
+        }
+
         // TODO: In getLogNumber we use the presentation from
         // the connection for the CNAP. Should we use the one
         // below instead? (comes from caller info)
