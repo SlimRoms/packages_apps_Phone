@@ -158,7 +158,7 @@
     <string name="register_automatically" msgid="6017849844573519637">"Автоматическая регистрация..."</string>
     <string name="preferred_network_mode_title" msgid="8873246565334559308">"Режим сети"</string>
     <string name="preferred_network_mode_summary" msgid="1434820673166126609">"Изменить режим работы сети"</string>
-    <string name="preferred_network_mode_dialogtitle" msgid="8176355237105593793">"Режим предпочтительной сети"</string>
+    <string name="preferred_network_mode_dialogtitle" msgid="8176355237105593793">"Предпочтительный режим сети"</string>
     <string name="preferred_network_mode_wcdma_perf_summary" msgid="8521677230113533809">"Предпочтительная сеть: WCDMA"</string>
     <string name="preferred_network_mode_gsm_only_summary" msgid="3352445413437453511">"Предпочтительная сеть: только GSM"</string>
     <string name="preferred_network_mode_wcdma_only_summary" msgid="2836897236221063413">"Предпочтительная сеть: только WCDMA"</string>
