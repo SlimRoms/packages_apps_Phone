@@ -39,7 +39,6 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
@@ -416,21 +415,16 @@ public class PhoneUtils {
             return getPrefs(context).getBoolean("button_show_ssn_key", false);
         }
         static boolean showCallLogAfterCall(Context context) {
-            return getPrefs(context).getBoolean("button_calllog_after_call", true);
+            return getPrefs(context).getBoolean("button_calllog_after_call", false);
         }
-        static boolean backgroundInCallScreen(Context context) {
-            return getPrefs(context).getBoolean("bg_incall_screen", false);
+        static boolean markRejectedCallsAsMissed(Context context) {
+            return getPrefs(context).getBoolean("button_rejected_as_missed", false);
         }
         static int flipAction(Context context) {
             String s = getPrefs(context).getString("flip_action", "0");
             return Integer.parseInt(s);
         }
-        static boolean transparentInCallWidget(Context context) {
-            return getPrefs(context).getBoolean("transparent_in_call_widget", false);
-        }
-        static boolean rejectedAsMissed(Context context) {
-            return getPrefs(context).getBoolean("button_rejected_as_missed", false);
-        }
+
         /* blacklist handling */
         static boolean isBlacklistEnabled(Context context) {
             return Settings.System.getInt(context.getContentResolver(),
@@ -447,9 +441,6 @@ public class PhoneUtils {
         }
         static boolean isBlacklistRegexEnabled(Context context) {
             return getPrefs(context).getBoolean("button_blacklist_regex", false);
-        }
-        private static SharedPreferences getPrefs(Context context) {
-            return PreferenceManager.getDefaultSharedPreferences(context);
         }
 
         /* voice quality preferences */
@@ -476,6 +467,10 @@ public class PhoneUtils {
                 return values[0];
             }
             return null;
+        }
+
+        private static SharedPreferences getPrefs(Context context) {
+            return PreferenceManager.getDefaultSharedPreferences(context);
         }
     }
 
